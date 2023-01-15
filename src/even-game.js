@@ -9,7 +9,7 @@ export default (playerName) => {
   console.log(`Answer "${rightAnswers[0]}" if the number is even, otherwise answer "${rightAnswers[1]}".`);
 
   for (let i = 0, randomNumber, playerAnswer; i < answersToWin; i += 1) {
-    randomNumber = Math.floor(Math.random() * maxRandomNum + minRandomNum);
+    randomNumber = Math.floor(Math.random() * (maxRandomNum - minRandomNum + 1) + minRandomNum);
     console.log(`Question: ${randomNumber}`);
     playerAnswer = readlineSync.question('Your answer: ');
 
