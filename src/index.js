@@ -1,39 +1,36 @@
 import readlineSync from 'readline-sync';
+import { getEvenRules, getEvenQuestionAndCount } from './games/even-game.js';
 
-export default (game) => {
-  const minRandomNum = 1;
-  const maxRandomNum = 100;
+const runGame = (getGameRules, getGameQuestionAndCount) => {
+  const minRandomValue = 1;
+  const maxRandomValue = 100;
   const answersToWin = 3;
-  // убрать!!!
-  const rightAnswers = ['yes', 'no'];
-  // end убрать!!!
-  let randNumberOne;
-  // let randNumberTwo;
-  let playerAnswer;
-  let myExpression;
 
   console.log('Welcome to the Brain Games!');
   const playerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${playerName}!`);
 
-  // even-game
-  console.log(`Answer "${rightAnswers[0]}" if the number is even, otherwise answer "${rightAnswers[1]}".`);
+  console.log(getGameRules()); // show the rules of the running game
 
-  for (let i = 0; i < answersToWin; i += 1) {
-    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! run func for a currently game
-    // randNumberOne = Math.floor(Math.random() * (maxRandomNum - minRandomNum + 1) + minRandomNum);
-    // console.log(`Question: ${randNumberOne}`);
-    // playerAnswer = readlineSync.question('Your answer: ');
+  for (let i = 0, gameQuestionAndCount, playerAnswer; i < answersToWin; i += 1) {
+    /* [0] - question, [1] - count */
+    gameQuestionAndCount = getGameQuestionAndCount(minRandomValue, maxRandomValue);
 
-    if (playerAnswer === rightAnswers[randNumberOne % 2]) {
+    console.log(`Question: ${gameQuestionAndCount[0]}`);
+    playerAnswer = readlineSync.question('Your answer: ');
+
+    if (playerAnswer === gameQuestionAndCount[1]) {
       console.log('Correct!');
     } else {
-      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${rightAnswers[randNumberOne % 2]}'.`);
+      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${gameQuestionAndCount[1]}'.`);
       console.log(`Let's try again, ${playerName}!`);
-      return 'defeat';
+      return;
     }
   }
-
   console.log(`Congratulations, ${playerName}!`);
-  return 'win';
 };
+
+const playEvenGame = () => runGame(getEvenRules, getEvenQuestionAndCount);
+
+// eslint-disable-next-line import/prefer-default-export
+export default playEvenGame;
