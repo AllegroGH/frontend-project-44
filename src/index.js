@@ -3,6 +3,7 @@ import { getEvenRules, getEvenQuestionAndCount } from './games/even-game.js';
 import { getCalcRules, getCalcQuestionAndCount } from './games/calc-game.js';
 import { getGCDRules, getGCDQuestionAndCount } from './games/gcd-game.js';
 import { getProgressionRules, getProgressionQuestionAndCount } from './games/progression-game.js';
+import { getPrimeRules, getPrimeQuestionAndCount } from './games/prime-game.js';
 
 const runGame = (getGameRules, getGameQuestionAndCount) => {
   const minRandomValue = 1;
@@ -40,6 +41,7 @@ const playEvenGame = () => runGame(getEvenRules, getEvenQuestionAndCount);
 const playCalcGame = () => runGame(getCalcRules, getCalcQuestionAndCount);
 const playGCDGame = () => runGame(getGCDRules, getGCDQuestionAndCount);
 const playProgressionGame = () => runGame(getProgressionRules, getProgressionQuestionAndCount);
+const playPrimeGame = () => runGame(getPrimeRules, getPrimeQuestionAndCount);
 
 export {
   /* export to bin */
@@ -47,4 +49,5 @@ export {
   playCalcGame,
   playGCDGame,
   playProgressionGame,
+  playPrimeGame,
 };

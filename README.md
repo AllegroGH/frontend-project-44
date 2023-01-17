@@ -13,3 +13,6 @@ https://asciinema.org/a/2IHNzo785RCoblr73klqw8Cbk
 
 Аскинема с примером запуска игры, победой и поражением игрока (игра brain-progression):
 https://asciinema.org/a/YZ7Qs7VGixkydLGae1AvACzo3
+
+Аскинема с примером запуска игры, победой и поражением игрока (игра brain-prime):
+https://asciinema.org/a/jbkYqjaM2kwRgjSs4cwJMFcVy
