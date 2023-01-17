@@ -4,3 +4,6 @@
 
 Аскинема с примером установки пакета, запуска игры, победой и поражением игрока (игра brain-even).
 https://asciinema.org/a/OhUoddE8khhAn6YnCyfUip1zZ
+
+Аскинема с примером запуска игры, победой и поражением игрока (игра brain-calc).
+https://asciinema.org/a/4qaegobOxsvJ02k9zbRHYFONE

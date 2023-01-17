@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import { getEvenRules, getEvenQuestionAndCount } from './games/even-game.js';
+import { getCalcRules, getCalcQuestionAndCount } from './games/calc-game.js';
 
 const runGame = (getGameRules, getGameQuestionAndCount) => {
   const minRandomValue = 1;
@@ -31,6 +32,6 @@ const runGame = (getGameRules, getGameQuestionAndCount) => {
 };
 
 const playEvenGame = () => runGame(getEvenRules, getEvenQuestionAndCount);
+const playCalcGame = () => runGame(getCalcRules, getCalcQuestionAndCount);
 
-// eslint-disable-next-line import/prefer-default-export
-export default playEvenGame;
+export { playEvenGame, playCalcGame };
