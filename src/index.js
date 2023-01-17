@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 import { getEvenRules, getEvenQuestionAndCount } from './games/even-game.js';
 import { getCalcRules, getCalcQuestionAndCount } from './games/calc-game.js';
 import { getGCDRules, getGCDQuestionAndCount } from './games/gcd-game.js';
+import { getProgressionRules, getProgressionQuestionAndCount } from './games/progression-game.js';
 
 const runGame = (getGameRules, getGameQuestionAndCount) => {
   const minRandomValue = 1;
@@ -38,5 +39,12 @@ const runGame = (getGameRules, getGameQuestionAndCount) => {
 const playEvenGame = () => runGame(getEvenRules, getEvenQuestionAndCount);
 const playCalcGame = () => runGame(getCalcRules, getCalcQuestionAndCount);
 const playGCDGame = () => runGame(getGCDRules, getGCDQuestionAndCount);
+const playProgressionGame = () => runGame(getProgressionRules, getProgressionQuestionAndCount);
 
-export { playEvenGame, playCalcGame, playGCDGame };
+export {
+  /* export to bin */
+  playEvenGame,
+  playCalcGame,
+  playGCDGame,
+  playProgressionGame,
+};

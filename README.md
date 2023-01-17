@@ -10,3 +10,6 @@ https://asciinema.org/a/4qaegobOxsvJ02k9zbRHYFONE
 
 Аскинема с примером запуска игры, победой и поражением игрока (игра brain-gcd):
 https://asciinema.org/a/2IHNzo785RCoblr73klqw8Cbk
+
+Аскинема с примером запуска игры, победой и поражением игрока (игра brain-progression):
+https://asciinema.org/a/YZ7Qs7VGixkydLGae1AvACzo3
