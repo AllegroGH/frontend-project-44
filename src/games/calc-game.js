@@ -27,7 +27,7 @@ const getCalcQuestionAndCount = (minRandomValue, maxRandomValue) => {
       break;
     default:
   }
-  count = count.toString(); // data type conversion
+  count = `${count}`; // data type conversion
 
   return [question, count];
 };

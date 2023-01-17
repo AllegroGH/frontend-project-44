@@ -1,18 +1,22 @@
 import readlineSync from 'readline-sync';
 import { getEvenRules, getEvenQuestionAndCount } from './games/even-game.js';
 import { getCalcRules, getCalcQuestionAndCount } from './games/calc-game.js';
+import { getGCDRules, getGCDQuestionAndCount } from './games/gcd-game.js';
 
 const runGame = (getGameRules, getGameQuestionAndCount) => {
   const minRandomValue = 1;
   const maxRandomValue = 100;
   const answersToWin = 3;
 
+  /* welcome */
   console.log('Welcome to the Brain Games!');
   const playerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${playerName}!`);
 
-  console.log(getGameRules()); // show the rules of the running game
+  /* show the rules of the running game */
+  console.log(getGameRules());
 
+  /* main loop */
   for (let i = 0, gameQuestionAndCount, playerAnswer; i < answersToWin; i += 1) {
     /* [0] - question, [1] - count */
     gameQuestionAndCount = getGameQuestionAndCount(minRandomValue, maxRandomValue);
@@ -33,5 +37,6 @@ const runGame = (getGameRules, getGameQuestionAndCount) => {
 
 const playEvenGame = () => runGame(getEvenRules, getEvenQuestionAndCount);
 const playCalcGame = () => runGame(getCalcRules, getCalcQuestionAndCount);
+const playGCDGame = () => runGame(getGCDRules, getGCDQuestionAndCount);
 
-export { playEvenGame, playCalcGame };
+export { playEvenGame, playCalcGame, playGCDGame };
