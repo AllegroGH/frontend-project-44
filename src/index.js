@@ -1,35 +1,32 @@
 import readlineSync from 'readline-sync';
-import { getEvenRules, getEvenQuestionAndCount } from './games/even-game.js';
-import { getCalcRules, getCalcQuestionAndCount } from './games/calc-game.js';
-import { getGCDRules, getGCDQuestionAndCount } from './games/gcd-game.js';
-import { getProgressionRules, getProgressionQuestionAndCount } from './games/progression-game.js';
-import { getPrimeRules, getPrimeQuestionAndCount } from './games/prime-game.js';
+import { getEvenRules, getEvenQuestionAndAnswer } from './games/even-game.js';
+import { getCalcRules, getCalcQuestionAndAnswer } from './games/calc-game.js';
+import { getGCDRules, getGCDQuestionAndAnswer } from './games/gcd-game.js';
+import { getProgressionRules, getProgressionQuestionAndAnswer } from './games/progression-game.js';
+import { getPrimeRules, getPrimeQuestionAndAnswer } from './games/prime-game.js';
 
-const runGame = (getGameRules, getGameQuestionAndCount) => {
+const runGame = (getGameRules, getGameQuestionAndAnswer) => {
   const minRandomValue = 1;
   const maxRandomValue = 100;
-  const answersToWin = 3;
+  const gameTries = 3;
 
-  /* welcome */
   console.log('Welcome to the Brain Games!');
   const playerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${playerName}!`);
 
-  /* show the rules of the running game */
   console.log(getGameRules());
 
-  /* main loop */
-  for (let i = 0, gameQuestionAndCount, playerAnswer; i < answersToWin; i += 1) {
+  for (let i = 0, playerAnswer; i < gameTries; i += 1) {
     /* [0] - question, [1] - count */
-    gameQuestionAndCount = getGameQuestionAndCount(minRandomValue, maxRandomValue);
+    const [question, answer] = getGameQuestionAndAnswer(minRandomValue, maxRandomValue);
 
-    console.log(`Question: ${gameQuestionAndCount[0]}`);
+    console.log(`Question: ${question}`);
     playerAnswer = readlineSync.question('Your answer: ');
 
-    if (playerAnswer === gameQuestionAndCount[1]) {
+    if (playerAnswer === answer) {
       console.log('Correct!');
     } else {
-      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${gameQuestionAndCount[1]}'.`);
+      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
       console.log(`Let's try again, ${playerName}!`);
       return;
     }
@@ -37,14 +34,14 @@ const runGame = (getGameRules, getGameQuestionAndCount) => {
   console.log(`Congratulations, ${playerName}!`);
 };
 
-const playEvenGame = () => runGame(getEvenRules, getEvenQuestionAndCount);
-const playCalcGame = () => runGame(getCalcRules, getCalcQuestionAndCount);
-const playGCDGame = () => runGame(getGCDRules, getGCDQuestionAndCount);
-const playProgressionGame = () => runGame(getProgressionRules, getProgressionQuestionAndCount);
-const playPrimeGame = () => runGame(getPrimeRules, getPrimeQuestionAndCount);
+const playEvenGame = () => runGame(getEvenRules, getEvenQuestionAndAnswer);
+const playCalcGame = () => runGame(getCalcRules, getCalcQuestionAndAnswer);
+const playGCDGame = () => runGame(getGCDRules, getGCDQuestionAndAnswer);
+const playProgressionGame = () => runGame(getProgressionRules, getProgressionQuestionAndAnswer);
+const playPrimeGame = () => runGame(getPrimeRules, getPrimeQuestionAndAnswer);
 
 export {
-  /* export to bin */
+  /* _eslint vs prettier ))) */
   playEvenGame,
   playCalcGame,
   playGCDGame,

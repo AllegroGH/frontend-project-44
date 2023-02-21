@@ -2,11 +2,10 @@ import getRandomIntInclusive from '../getRandomIntInclusive.js';
 
 const getGCDRules = () => 'Find the greatest common divisor of given numbers.';
 
-const getGCDQuestionAndCount = (minRandomValue, maxRandomValue) => {
-  /* get random numbers in given range */
+const getGCDQuestionAndAnswer = (minRandomValue, maxRandomValue) => {
   let num1 = getRandomIntInclusive(minRandomValue, maxRandomValue);
   let num2 = getRandomIntInclusive(minRandomValue, maxRandomValue);
-  /* form a question string */
+
   const question = `${num1} ${num2}`;
 
   /* count a correct answer */
@@ -17,9 +16,9 @@ const getGCDQuestionAndCount = (minRandomValue, maxRandomValue) => {
       num2 %= num1;
     }
   }
-  const count = `${num1 + num2}`; // data type conversion
+  const answer = `${num1 + num2}`;
 
-  return [question, count];
+  return [question, answer];
 };
 
-export { getGCDRules, getGCDQuestionAndCount };
+export { getGCDRules, getGCDQuestionAndAnswer };

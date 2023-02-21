@@ -9,14 +9,10 @@ const isPrime = (number) => {
 
 const getPrimeRules = () => 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const getPrimeQuestionAndCount = (minRandomValue, maxRandomValue) => {
-  /* get random number (question) in given range */
+const getPrimeQuestionAndAnswer = (minRandomValue, maxRandomValue) => {
   const question = getRandomIntInclusive(minRandomValue, maxRandomValue);
-
-  /* count a correct answer */
-  const count = isPrime(question) ? 'yes' : 'no';
-
-  return [question, count];
+  const answer = isPrime(question) ? 'yes' : 'no';
+  return [question, answer];
 };
 
-export { getPrimeRules, getPrimeQuestionAndCount };
+export { getPrimeRules, getPrimeQuestionAndAnswer };
