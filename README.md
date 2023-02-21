@@ -1,5 +1,4 @@
 # frontend-project-44
-
 My first project on Hexlet.
 
 [![Actions Status](https://github.com/AllegroGH/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/AllegroGH/frontend-project-44/actions)
